@@ -1,0 +1,22 @@
+{
+  "name": "gh-fetch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./esm/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shopstic/gh-fetch.git"
+  },
+  "author": "",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/shopstic/gh-fetch/issues"
+  },
+  "homepage": "https://github.com/shopstic/gh-fetch#readme",
+  "devDependencies": {
+    "@types/node": "^18.0.6"
+  }
+}
