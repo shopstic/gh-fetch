@@ -2,8 +2,7 @@
 set -euo pipefail
 
 build_npm() {
-  VERSION=${1:?"Version is required"}
-  deno run -A --check ./build-npm.ts "${VERSION}"
+  deno run -A --check ./build-npm.ts "$@"
 }
 
 publish_npm() {
@@ -14,7 +13,7 @@ gen_types() {
   local SPEC_URL=${1:-"https://raw.githubusercontent.com/github/rest-api-description/main/descriptions/api.github.com/api.github.com.json"}
   local DIR="$(dirname "$(realpath "$0")")"
 
-  openapi-ts <(curl -sf "${SPEC_URL}") "$DIR"/openapi-ts-formatter.mjs > "$DIR"/src/types.ts
+  openapi-ts-gen <(curl -sf "${SPEC_URL}") "$DIR"/openapi-ts-formatter.mjs > "$DIR"/src/types.ts
 
   "$0" auto_fmt
 }
